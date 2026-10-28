@@ -3,36 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="/src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sustainability Initiatives | glam</title>
     <meta name="description" content="Discover how glam works with sustainability across sourcing, packaging, shipping, and community initiatives." />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header class="site-header">
       <div class="container">
         <div class="logo">
-          <a href="http://glam.local/">
-            <img src="/assets/glam.png" alt="Glam" style="height: 40px;">
+          <a href="https://glamweb.dk/">
+            <img src="/assets/glam.webp" alt="Glam" style="height: 40px;" width="74" height="40">
           </a>
         </div>
-        <nav>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+        <nav id="primary-nav" aria-label="Primary navigation">
           <ul>
-            <li><a href="http://glam.local/">Shop</a></li>
-            <li><a href="http://glam.local/blog">Blog</a></li>
-            <li><a href="http://glam.local/about">About</a></li>
-            <li><a href="http://glam.local/contact-us">Contact us</a></li>
-            <li><a href="http://glam.local/sustainability">Sustainability</a></li>
+            <li><a href="https://glamweb.dk/shop/">Shop</a></li>
+            <li><a href="https://glamweb.dk/front-blog/">Blog</a></li>
+            <li><a href="https://glamweb.dk/about/">About</a></li>
+            <li><a href="https://glamweb.dk/contact-us/">Contact us</a></li>
+            <li><a href="https://sustainability.glamweb.dk" aria-current="page">Sustainability</a></li>
+            <li><a href="https://glamweb.dk/my-account/">Account</a></li>
           </ul>
         </nav>
-        <div class="cart">Cart</div>
+        <a href="https://glamweb.dk/cart/" class="cart" style="text-decoration: none;">Cart</a>
+        <div class="header-lang">
+          <a href="#">DK</a> /
+          <a href="#">DE</a>
+        </div>
       </div>
     </header>
+    <script>
+      /* Mobile menu: without JS the nav simply stays visible */
+      (function () {
+        var header = document.querySelector('.site-header');
+        var toggle = header.querySelector('.menu-toggle');
+        header.classList.add('has-menu-toggle');
+        toggle.addEventListener('click', function () {
+          var open = header.classList.toggle('menu-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      })();
+    </script>
 
-    <main>
+    <main id="main-content">
       <section class="hero-banner">
   <img src="/assets/makeupkit.webp" alt="Hands holding various cruelty-free beauty products">
   <h2 class="hero-overlay-text">Glam without compromise</h2>
@@ -80,14 +102,14 @@
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </svg>
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/glam_denmark?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="#" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@glam_denmark?is_from_webapp=1&sender_device=pc" aria-label="TikTok">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M16.5 3c.3 2.1 1.7 3.6 3.9 3.9v2.6c-1.4 0-2.8-.4-3.9-1.2v6.2c0 3.2-2.6 5.5-5.6 5.5-1.4 0-2.7-.5-3.7-1.5-1.6-1.6-1.9-4.2-.6-6.1C7.6 11 9.1 10.1 10.7 10v2.7c-.5-.1-1.1 0-1.6.3-.9.5-1.4 1.6-1.1 2.6.3.9 1.2 1.6 2.2 1.6 1.4 0 2.5-1.1 2.5-2.5V3h3.8z"></path>
               </svg>
@@ -100,28 +122,39 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="logo">
-          <img src="/assets/glam.png" alt="Glam">
+          <img src="/assets/glam.webp" alt="Glam">
         </div>
-        <h4>Customer service</h4>
-        <h4>Information</h4>
-        <h4>Social Media</h4>
 
-        <div class="footer-divider"></div>
+        <div class="footer-col footer-col-1">
+          <h2>Customer service</h2>
+          <ul>
+            <li><a href="https://glamweb.dk/contact-us/">Delivery</a></li>
+            <li><a href="https://glamweb.dk/contact-us/">Returns</a></li>
+          </ul>
+        </div>
 
-        <div></div>
-        <ul>
-          <li><a href="https://glamweb.dk/delivery">Delivery</a></li>
-          <li><a href="https://glamweb.dk/returns">Returns</a></li>
-        </ul>
-        <ul>
-          <li><a href="https://glamweb.dk/about">About</a></li>
-          <li><a href="https://glamweb.dk/contact-us">Contact</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">TikTok</a></li>
-        </ul>
+        <div class="footer-col footer-col-2">
+          <h2>Information</h2>
+          <ul>
+            <li><a href="https://glamweb.dk/about/">About</a></li>
+            <li><a href="https://glamweb.dk/contact-us/">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <h2>Social Media</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/glam_denmark?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@glam_denmark?is_from_webapp=1&sender_device=pc">TikTok</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-divider" aria-hidden="true"></div>
       </div>
+
+      <p class="footer-disclaimer container">
+        glam is a student project made for educational purposes, not a real webshop. Nothing is sold, no payments are processed and no money is made from this site. All brand names, product names and images belong to their respective owners.
+      </p>
     </footer>
   </body>
 </html>
